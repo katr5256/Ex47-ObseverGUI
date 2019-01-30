@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Ex47_ObseverGUI
 {
-    public class Database
+    public class Database : ISubscriber
     {
 
         private static string conntectionString =

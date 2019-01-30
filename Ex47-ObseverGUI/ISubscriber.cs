@@ -8,6 +8,9 @@ namespace Ex47_ObseverGUI
 {
     public interface ISubscriber
     {
-        void Update(IPublisher publisher, string message);
+        void Update(IPublisher publisher, string message)
+        {
+
+        }
     }
 }

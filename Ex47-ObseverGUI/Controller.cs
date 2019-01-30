@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex47_ObseverGUI
 {
-    public class Controller
+    public class Controller : ISubscriber , IPublisher
     {
         Database DB = new Database();
         public void InsertPet(string PetName, string PetType, string PetBreed, string PetDOB, string PetWeight, int OwnerId)
