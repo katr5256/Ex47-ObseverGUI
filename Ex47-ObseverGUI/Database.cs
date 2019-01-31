@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Ex47_ObseverGUI
 {
-    public class Database : ISubscriber
+    public class Database /*: ISubscriber*/
     {
 
         private static string conntectionString =
@@ -60,6 +60,40 @@ namespace Ex47_ObseverGUI
                     cmd1.Parameters.Add(new SqlParameter("@OwnerEmail", petOwner.OwnerEmail));
 
                     cmd1.ExecuteNonQuery();
+                }
+
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Hovsa " + e.Message);
+                }
+            }
+        }
+
+        public void ShowPets(PetRepository petRepo)
+        {
+            using (SqlConnection con = new SqlConnection(conntectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd2 = new SqlCommand("GetPets", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader read = cmd2.ExecuteReader();
+
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            string name = read["PetName"].ToString();
+                            string type = read["PetType"].ToString();
+                            string breed = read["PetBreed"].ToString();
+                            string DOB = read["PetDOB"].ToString();
+                            string weight = read["PetWeight"].ToString();
+                            string ownerid = read["OwnerID"].ToString();
+                        }
+                    }
                 }
 
                 catch (SqlException e)

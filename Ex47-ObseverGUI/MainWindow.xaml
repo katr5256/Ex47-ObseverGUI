@@ -17,6 +17,8 @@
         <TextBox Name="OwnerId1" HorizontalAlignment="Left" Height="23" Margin="350,315,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button Name="CancelPet" Content="Cancel" HorizontalAlignment="Left" Margin="566,207,0,0" VerticalAlignment="Top" Width="75" Click="CancelPet_Click"/>
         <Button Name="SavePet" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="566,239,0,0" Click="SavePet_Click"/>
-        
+        <Button Name="ShowPets" Content="Show all pets" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="27,25,0,0" Click="ShowPets_Click"/>
+        <TextBox Name="ShowAllPets" HorizontalAlignment="Left" Height="288" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="240" Margin="27,50,0,0"/>
+
     </Grid>
 </Window>

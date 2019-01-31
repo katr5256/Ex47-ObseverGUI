@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex47_ObseverGUI
 {
-    public class Controller : ISubscriber , IPublisher
+    public class Controller /*: ISubscriber , IPublisher*/
     {
         Database DB = new Database();
         public void InsertPet(string PetName, string PetType, string PetBreed, string PetDOB, string PetWeight, int OwnerId)
@@ -39,6 +39,19 @@ namespace Ex47_ObseverGUI
         }
         public void FindOwnerByFirstName(string ownerEmail, string name)
         {
+
+        }
+
+        public void ShowPets(string PetName, string PetType, string PetBreed, string PetDOB, string PetWeight, int OwnerId)
+        {
+            PetRepository petRepo = new PetRepository();
+            petRepo.PetName = PetName;
+            petRepo.PetType = PetType;
+            petRepo.PetBreed = PetBreed;
+            petRepo.PetDOB = PetDOB;
+            petRepo.PetWeight = PetWeight;
+            petRepo.OwnerID = OwnerId;
+            DB.ShowPets(petRepo);
 
         }
     }

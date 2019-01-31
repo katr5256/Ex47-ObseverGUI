@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex47_ObseverGUI
 {
-    public class PetOwner : ISubscriber , IPublisher
+    public class PetOwner
     {
         public string OwnerFirstName { get; set; }
         public string OwnerLastName { get; set; }

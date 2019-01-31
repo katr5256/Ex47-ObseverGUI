@@ -18,7 +18,7 @@ namespace Ex47_ObseverGUI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window , IPublisher
+    public partial class MainWindow : Window/* , IPublisher*/
     {
         public MainWindow()
         {
@@ -69,6 +69,13 @@ namespace Ex47_ObseverGUI
             controller.InsertPet(PetName, PetType, PetBreed, PetDOB, PetWeight, OwnerId);
 
         }
+
+        private void ShowPets_Click(object sender, RoutedEventArgs e)
+        {
+            Controller controller = new Controller();
+            string showAllPets = ShowAllPets.Text;
+            
+        }          
     }
 }
 
